@@ -17,5 +17,23 @@ namespace WrestleHeavy.MVC.Controllers
             var model = new PromotionListItem[0];
             return View(model);
         }
+
+        // GET: Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(PromotionCreate model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            return View(model);
+        }
     }
 }

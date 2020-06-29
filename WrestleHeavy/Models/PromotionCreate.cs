@@ -7,21 +7,19 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class PromotionListItem
+    public class PromotionCreate
     {
-        [Display(Name = "Promotion ID")]
-        public int PromotionId { get; set; }
-
-        [Display(Name = "Promotion Name")]
+        [Required]
+        [MinLength(3, ErrorMessage = "Please enter at least 3 characters.")]
+        [MaxLength(50, ErrorMessage = "Please enter a shorter name for the promotion.")]
         public string Name { get; set; }
 
+        [Required]
         [Display(Name = "Date Founded")]
         public DateTime DateFounded { get; set; }
-
-        [Display(Name = "Website")]
+   
+        [Required]
+        [MinLength(9, ErrorMessage = "Please enter a full web address.")]
         public string Website { get; set; }
-
-        [Display(Name = "Date Created")]
-        public DateTimeOffset CreatedUtc { get; set; }
     }
 }
