@@ -23,8 +23,5 @@ namespace Models
 
         [Display(Name = "Date Created")]
         public DateTimeOffset CreatedUtc { get; set; }
-
-        [Display(Name = "Date Last Modified")]
-        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }

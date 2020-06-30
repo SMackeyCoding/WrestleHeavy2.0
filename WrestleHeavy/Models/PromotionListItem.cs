@@ -15,6 +15,10 @@ namespace Models
         [Display(Name = "Promotion Name")]
         public string Name { get; set; }
 
+        [UIHint("Starred")]
+        [Display(Name = "Favorite")]
+        public bool IsStarred { get; set; }
+
         [Display(Name = "Date Founded")]
         public DateTime DateFounded { get; set; }
 

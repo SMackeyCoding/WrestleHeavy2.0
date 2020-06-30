@@ -44,6 +44,7 @@ namespace Services
                 {
                     PromotionId = e.PromotionId,
                     Name = e.Name,
+                    IsStarred = e.IsStarred,
                     DateFounded = e.DateFounded,
                     Website = e.Website,
                     CreatedUtc = e.CreatedUtc
@@ -63,8 +64,7 @@ namespace Services
                     Name = entity.Name,
                     DateFounded = entity.DateFounded,
                     Website = entity.Website,
-                    CreatedUtc = entity.CreatedUtc,
-                    ModifiedUtc = entity.ModifiedUtc
+                    CreatedUtc = entity.CreatedUtc
                 };
             }
         }
@@ -75,6 +75,7 @@ namespace Services
             {
                 var entity = ctx.Promotions.Single(e => e.PromotionId == model.PromotionId && e.OwnerId == _userId);
                 entity.Name = model.Name;
+                entity.IsStarred = model.IsStarred;
                 entity.DateFounded = model.DateFounded;
                 entity.Website = model.Website;
 

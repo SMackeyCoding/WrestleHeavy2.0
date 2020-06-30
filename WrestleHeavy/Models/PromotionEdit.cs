@@ -10,6 +10,7 @@ namespace Models
     {
         public int PromotionId { get; set; }
         public string Name { get; set; }
+        public bool IsStarred { get; set; }
         public DateTime DateFounded { get; set; }
         public string Website { get; set; }
     }
