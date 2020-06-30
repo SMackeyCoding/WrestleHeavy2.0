@@ -14,19 +14,20 @@ namespace WrestleHeavy.MVC.Controllers.WebAPI
     [RoutePrefix("api/Promotion")]
     public class PromotionController : ApiController
     {
-        private bool SetStarState (int promotionId, bool newState)
+        private bool SetStarState(int promotionId, bool newState)
         {
             //Create the service
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new PromotionService(userId);
 
-            //Get the promotion
+            // Get the promotion
             var detail = service.GetPromotionById(promotionId);
 
-            //Create the PromotionEdit model instance with the new star state
+            // Create the PromotionEdit model instance wih the new star state
             var updatedPromotion = new PromotionEdit
             {
                 PromotionId = detail.PromotionId,
+                Name = detail.Name,
                 IsStarred = newState,
                 DateFounded = detail.DateFounded,
                 Website = detail.Website
