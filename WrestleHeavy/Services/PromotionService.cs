@@ -51,5 +51,45 @@ namespace Services
                 return query.ToArray();
             }
         }
+
+        public PromotionDetail GetPromotionById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Promotions.Single(e => e.PromotionId == id && e.OwnerId == _userId);
+                return new PromotionDetail
+                {
+                    PromotionId = entity.PromotionId,
+                    Name = entity.Name,
+                    DateFounded = entity.DateFounded,
+                    Website = entity.Website,
+                    CreatedUtc = entity.CreatedUtc,
+                    ModifiedUtc = entity.ModifiedUtc
+                };
+            }
+        }
+
+        public bool UpdatePromotion(PromotionEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Promotions.Single(e => e.PromotionId == model.PromotionId && e.OwnerId == _userId);
+                entity.Name = model.Name;
+                entity.DateFounded = model.DateFounded;
+                entity.Website = model.Website;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeletePromotion(int promotionId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Promotions.Single(e => e.PromotionId == promotionId && e.OwnerId == _userId);
+                ctx.Promotions.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
