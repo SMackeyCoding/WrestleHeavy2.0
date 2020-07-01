@@ -40,7 +40,9 @@ namespace Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Promotions.Where(e => e.OwnerId == _userId).Select(e => new PromotionListItem
+                var query = ctx.Promotions
+                    .Where(e => e.OwnerId == _userId)
+                    .Select(e => new PromotionListItem
                 {
                     PromotionId = e.PromotionId,
                     Name = e.Name,
@@ -57,7 +59,9 @@ namespace Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Promotions.Single(e => e.PromotionId == id && e.OwnerId == _userId);
+                var entity = ctx.Promotions
+                    .Single(e => e.PromotionId == id 
+                    && e.OwnerId == _userId);
                 return new PromotionDetail
                 {
                     PromotionId = entity.PromotionId,
@@ -73,7 +77,10 @@ namespace Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Promotions.Single(e => e.PromotionId == model.PromotionId && e.OwnerId == _userId);
+                var entity = ctx.Promotions.Single(e => 
+                e.PromotionId == model.PromotionId 
+                && e.OwnerId == _userId);
+
                 entity.Name = model.Name;
                 entity.IsStarred = model.IsStarred;
                 entity.DateFounded = model.DateFounded;
@@ -87,7 +94,10 @@ namespace Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Promotions.Single(e => e.PromotionId == promotionId && e.OwnerId == _userId);
+                var entity = ctx.Promotions.Single(e => 
+                e.PromotionId == promotionId 
+                && e.OwnerId == _userId);
+
                 ctx.Promotions.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

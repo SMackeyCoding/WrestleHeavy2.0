@@ -68,6 +68,8 @@
   <ItemGroup>
     <Compile Include="PromotionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TitleService.cs" />
+    <Compile Include="WrestlerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

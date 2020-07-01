@@ -4,6 +4,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Data;
+using Data.Entities;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -34,6 +35,8 @@ namespace WrestleHeavy.Data
         }
 
         public DbSet<Promotion> Promotions { get; set; }
+        public DbSet<Wrestler> Wrestlers { get; set; }
+        public DbSet<Title> Titles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

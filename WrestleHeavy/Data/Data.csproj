@@ -66,6 +66,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Enums.cs" />
+    <Compile Include="Entities\Title.cs" />
+    <Compile Include="Entities\Wrestler.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202006292221381_InitialCreate.cs" />
     <Compile Include="Migrations\202006292221381_InitialCreate.Designer.cs">
@@ -84,7 +87,7 @@
       <DependentUpon>202006300035415_PromoStarred.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Promotion.cs" />
+    <Compile Include="Entities\Promotion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
