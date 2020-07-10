@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Models.WrestlerCRUD
 {
@@ -21,6 +23,8 @@ namespace Models.WrestlerCRUD
 
         [Display(Name = "Promotion")]
         public string PromotionName { get; set; }
+        public virtual Promotion Promotion { get; set; }
+        public IEnumerable<SelectListItem> Promotions { get; set; }
 
         // If too crowded, take away Win and Loss
 

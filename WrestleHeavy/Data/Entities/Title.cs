@@ -12,7 +12,7 @@ namespace Data.Entities
     public class Title
     {
         [Key]
-        public int TitleId { get; set; }
+        public int Id { get; set; }
         [Required]
         public Guid OwnerId { get; set; }
         [Required]
@@ -20,12 +20,10 @@ namespace Data.Entities
         [Required]
         public DateTimeOffset DateEstablished { get; set; }
 
-        [Required]
-        [ForeignKey("Promotion")]
+        [Required, ForeignKey("Promotion")]
         public int? PromotionId { get; set; }
         public virtual Promotion Promotion { get; set; }
 
-        [Required]
         [ForeignKey("Wrestler")]
         public int? WrestlerId { get; set; }
         public virtual Wrestler Wrestler { get; set; }
@@ -34,5 +32,7 @@ namespace Data.Entities
         public bool IsStarred { get; set; }
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
+
+        public List<Title> Titles { get; set; }
     }
 }

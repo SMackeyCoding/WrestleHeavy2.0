@@ -23,8 +23,8 @@ namespace Services
             var entity = new Promotion()
             {
                 OwnerId = _userId,
-                Name = model.Name,
-                DateFounded = model.DateFounded,
+                PromotionName = model.PromotionName,
+                DateFounded = model.DateFounded.Date,
                 Website = model.Website,
                 CreatedUtc = DateTimeOffset.Now
             };
@@ -45,12 +45,15 @@ namespace Services
                     .Select(e => new PromotionListItem
                 {
                     PromotionId = e.PromotionId,
-                    Name = e.Name,
+                    PromotionName = e.PromotionName,
                     IsStarred = e.IsStarred,
                     DateFounded = e.DateFounded,
                     Website = e.Website,
                     CreatedUtc = e.CreatedUtc
                 });
+
+                
+
                 return query.ToArray();
             }
         }
@@ -65,8 +68,8 @@ namespace Services
                 return new PromotionDetail
                 {
                     PromotionId = entity.PromotionId,
-                    Name = entity.Name,
-                    DateFounded = entity.DateFounded,
+                    PromotionName = entity.PromotionName,
+                    DateFounded = entity.DateFounded.Date,
                     Website = entity.Website,
                     CreatedUtc = entity.CreatedUtc
                 };
@@ -81,9 +84,9 @@ namespace Services
                 e.PromotionId == model.PromotionId 
                 && e.OwnerId == _userId);
 
-                entity.Name = model.Name;
+                entity.PromotionName = model.PromotionName;
                 entity.IsStarred = model.IsStarred;
-                entity.DateFounded = model.DateFounded;
+                entity.DateFounded = model.DateFounded.Date;
                 entity.Website = model.Website;
 
                 return ctx.SaveChanges() == 1;

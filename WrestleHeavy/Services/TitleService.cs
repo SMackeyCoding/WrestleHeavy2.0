@@ -45,10 +45,10 @@ namespace Services
                     .Where(e => e.OwnerId == _userId)
                     .Select(e => new TitleListItem
                     {
-                        TitleId = e.TitleId,
+                        TitleId = e.Id,
                         TitleName = e.TitleName,
                         DateEstablished = e.DateEstablished,
-                        PromotionName = e.Promotion.Name,
+                        PromotionName = e.Promotion.PromotionName,
                         WrestlerName = e.Wrestler.RingName,
                         CreatedUtc = e.CreatedUtc
                     });
@@ -61,14 +61,14 @@ namespace Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Titles
-                    .Single(e => e.TitleId == id
+                    .Single(e => e.Id == id
                     && e.OwnerId == _userId);
                 return new TitleDetail
                 {
-                    TitleId = entity.TitleId,
+                    TitleId = entity.Id,
                     TitleName = entity.TitleName,
                     DateEstablished = entity.DateEstablished,
-                    PromotionName = entity.Promotion.Name,
+                    PromotionName = entity.Promotion.PromotionName,
                     WrestlerName = entity.Wrestler.RingName,
                     CreatedUtc = entity.CreatedUtc
                 };
@@ -80,10 +80,10 @@ namespace Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Titles.Single(e =>
-                e.TitleId == model.TitleId
+                e.Id == model.TitleId
                 && e.OwnerId == _userId);
 
-                entity.TitleId = model.TitleId;
+                entity.Id = model.TitleId;
                 entity.TitleName = model.TitleName;
                 entity.WrestlerId = model.WrestlerId;
 
@@ -96,7 +96,7 @@ namespace Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Titles.Single(e =>
-                e.TitleId == titleId
+                e.Id == titleId
                 && e.OwnerId == _userId);
 
                 ctx.Titles.Remove(entity);

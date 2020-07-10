@@ -13,7 +13,7 @@ namespace Models
         public int PromotionId { get; set; }
 
         [Display(Name = "Promotion Name")]
-        public string Name { get; set; }
+        public string PromotionName { get; set; }
 
         [Display(Name = "Date Founded")]
         public DateTime DateFounded { get; set; }

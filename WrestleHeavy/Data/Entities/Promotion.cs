@@ -15,7 +15,7 @@ namespace Data
         [Required]
         public Guid OwnerId { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string PromotionName { get; set; }
         [Required]
         public DateTime DateFounded { get; set; }
         [Required]
@@ -25,5 +25,7 @@ namespace Data
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
+
+        public List<Promotion> Promotions { get; set; }
     }
 }

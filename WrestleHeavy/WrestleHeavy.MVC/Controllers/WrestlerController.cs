@@ -1,16 +1,23 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using Data;
+using Data.Entities;
+using Microsoft.AspNet.Identity;
 using Models.WrestlerCRUD;
 using Services;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WrestleHeavy.Data;
+using static Data.Entities.Repos;
 
 namespace WrestleHeavy.MVC.Controllers
 {
     public class WrestlerController : Controller
     {
+        private ApplicationDbContext ctx = new ApplicationDbContext();
+
         [Authorize]
 
         // GET: Wrestler
@@ -26,7 +33,10 @@ namespace WrestleHeavy.MVC.Controllers
         // GET: Create
         public ActionResult Create()
         {
-            return View();
+            var model = new WrestlerCreate();
+            var promotionList = new PromotionRepo();
+            model.Promotions = promotionList.GetPromotions();
+            return View(model);
         }
 
         // POST: Create
@@ -34,8 +44,13 @@ namespace WrestleHeavy.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(WrestlerCreate model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                var promotionList = new PromotionRepo();
+                model.Promotions = promotionList.GetPromotions();
 
+                return View(model);
+            }
             var service = CreateWrestlerService();
 
             if (service.CreateWrestler(model))
@@ -43,6 +58,8 @@ namespace WrestleHeavy.MVC.Controllers
                 TempData["SaveResult"] = "Your wrestler has been created!";
                 return RedirectToAction("Index");
             };
+
+
 
             ModelState.AddModelError("", "Wrestler could not be created.");
 
@@ -54,6 +71,9 @@ namespace WrestleHeavy.MVC.Controllers
         {
             var svc = CreateWrestlerService();
             var model = svc.GetWrestlerById(id);
+            int wins = model.Wins;
+            int losses = model.Losses;
+            model.WinLossRatio = wins / losses;
 
             return View(model);
         }
@@ -64,6 +84,8 @@ namespace WrestleHeavy.MVC.Controllers
         {
             var service = CreateWrestlerService();
             var detail = service.GetWrestlerById(id);
+
+            var promotionList = new PromotionRepo();
             var model = new WrestlerEdit
             {
                 WrestlerId = detail.WrestlerId,
@@ -72,9 +94,11 @@ namespace WrestleHeavy.MVC.Controllers
                 PromotionId = detail.PromotionId,
                 Wins = detail.Wins,
                 Losses = detail.Losses,
-                IsChampion = detail.IsChampion,
-                TitleId = detail.TitleId
+                //IsChampion = detail.IsChampion,
+                //TitleId = detail.TitleId
             };
+            model.Promotions = promotionList.GetPromotions();
+
             return View(model);
         }
 
@@ -83,7 +107,13 @@ namespace WrestleHeavy.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, WrestlerEdit model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                var promotionList = new PromotionRepo();
+                model.Promotions = promotionList.GetPromotions();
+
+                return View(model);
+            }
 
             if (model.WrestlerId != id)
             {

@@ -12,7 +12,8 @@ namespace Models
         [Required]
         [MinLength(3, ErrorMessage = "Please enter at least 3 characters.")]
         [MaxLength(50, ErrorMessage = "Please enter a shorter name for the promotion.")]
-        public string Name { get; set; }
+        [Display(Name = "Promotion Name")]
+        public string PromotionName { get; set; }
 
         [Required]
         [Display(Name = "Date Founded")]

@@ -43,6 +43,9 @@
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -52,11 +55,29 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -67,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Enums.cs" />
+    <Compile Include="Entities\Repos.cs" />
     <Compile Include="Entities\Title.cs" />
     <Compile Include="Entities\Wrestler.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -85,6 +107,38 @@
     <Compile Include="Migrations\202006300035415_PromoStarred.cs" />
     <Compile Include="Migrations\202006300035415_PromoStarred.Designer.cs">
       <DependentUpon>202006300035415_PromoStarred.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007022151467_WrestlerANDTitleCRUDAndMC.cs" />
+    <Compile Include="Migrations\202007022151467_WrestlerANDTitleCRUDAndMC.Designer.cs">
+      <DependentUpon>202007022151467_WrestlerANDTitleCRUDAndMC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007030239260_FKResolution1.cs" />
+    <Compile Include="Migrations\202007030239260_FKResolution1.Designer.cs">
+      <DependentUpon>202007030239260_FKResolution1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007051929128_FKResolution2.cs" />
+    <Compile Include="Migrations\202007051929128_FKResolution2.Designer.cs">
+      <DependentUpon>202007051929128_FKResolution2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007052007324_FKResolution3.cs" />
+    <Compile Include="Migrations\202007052007324_FKResolution3.Designer.cs">
+      <DependentUpon>202007052007324_FKResolution3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007052040411_DropDownDB1.cs" />
+    <Compile Include="Migrations\202007052040411_DropDownDB1.Designer.cs">
+      <DependentUpon>202007052040411_DropDownDB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007062149364_DropDownDB2.cs" />
+    <Compile Include="Migrations\202007062149364_DropDownDB2.Designer.cs">
+      <DependentUpon>202007062149364_DropDownDB2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007080057467_WinLossRatio2.cs" />
+    <Compile Include="Migrations\202007080057467_WinLossRatio2.Designer.cs">
+      <DependentUpon>202007080057467_WinLossRatio2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007092330385_ForeignKeyFun1.cs" />
+    <Compile Include="Migrations\202007092330385_ForeignKeyFun1.Designer.cs">
+      <DependentUpon>202007092330385_ForeignKeyFun1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\Promotion.cs" />
@@ -106,6 +160,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006300035415_PromoStarred.resx">
       <DependentUpon>202006300035415_PromoStarred.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007022151467_WrestlerANDTitleCRUDAndMC.resx">
+      <DependentUpon>202007022151467_WrestlerANDTitleCRUDAndMC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007030239260_FKResolution1.resx">
+      <DependentUpon>202007030239260_FKResolution1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007051929128_FKResolution2.resx">
+      <DependentUpon>202007051929128_FKResolution2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007052007324_FKResolution3.resx">
+      <DependentUpon>202007052007324_FKResolution3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007052040411_DropDownDB1.resx">
+      <DependentUpon>202007052040411_DropDownDB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007062149364_DropDownDB2.resx">
+      <DependentUpon>202007062149364_DropDownDB2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007080057467_WinLossRatio2.resx">
+      <DependentUpon>202007080057467_WinLossRatio2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007092330385_ForeignKeyFun1.resx">
+      <DependentUpon>202007092330385_ForeignKeyFun1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

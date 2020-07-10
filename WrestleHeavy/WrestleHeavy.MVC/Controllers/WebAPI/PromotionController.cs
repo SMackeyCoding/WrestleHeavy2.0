@@ -27,7 +27,7 @@ namespace WrestleHeavy.MVC.Controllers.WebAPI
             var updatedPromotion = new PromotionEdit
             {
                 PromotionId = detail.PromotionId,
-                Name = detail.Name,
+                PromotionName = detail.PromotionName,
                 IsStarred = newState,
                 DateFounded = detail.DateFounded,
                 Website = detail.Website

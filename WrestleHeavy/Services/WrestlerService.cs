@@ -1,10 +1,12 @@
-﻿using Data.Entities;
+﻿using Data;
+using Data.Entities;
 using Models.WrestlerCRUD;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using WrestleHeavy.Data;
 
 namespace Services
@@ -12,6 +14,7 @@ namespace Services
     public class WrestlerService
     {
         private readonly Guid _userId;
+        private ApplicationDbContext _ctx = new ApplicationDbContext();
 
         public WrestlerService(Guid userId)
         {
@@ -30,8 +33,8 @@ namespace Services
                 PromotionId = model.PromotionId,
                 Wins = model.Wins,
                 Losses = model.Losses,
-                IsChampion = model.IsChampion,
-                TitleId = model.TitleId,
+                //IsChampion = model.IsChampion,
+                //TitleId = model.TitleId,
                 CreatedUtc = DateTimeOffset.Now
             };
 
@@ -53,10 +56,10 @@ namespace Services
                         WrestlerId = e.WrestlerId,
                         RingName = e.RingName,
                         IsStarred = e.IsStarred,
-                        PromotionName = e.Promotion.Name,
+                        PromotionName = e.Promotion.PromotionName,
                         Wins = e.Wins,
                         Losses = e.Losses,
-                        WinLossRatio = e.WinLossRatio,
+                        WinLossRatio = e.Wins / e.Losses,
                         CreatedUtc = e.CreatedUtc
                     });
                 return query.ToArray();
@@ -74,17 +77,17 @@ namespace Services
                 {
                     WrestlerId = entity.WrestlerId,
                     RingName = entity.RingName,
+                    IsStarred = entity.IsStarred,
                     Gender = entity.Gender,
                     DateOfBirth = entity.DateOfBirth,
                     Nationality = entity.Nationality,
-                    PromotionName = entity.Promotion.Name,
                     PromotionId = entity.PromotionId,
                     Wins = entity.Wins,
                     Losses = entity.Losses,
-                    WinLossRatio = entity.WinLossRatio,
-                    IsChampion = entity.IsChampion,
-                    TitleName = entity.Title.TitleName,
-                    TitleId = entity.TitleId,
+                    WinLossRatio = entity.Wins / entity.Losses,
+                    //IsChampion = entity.IsChampion,
+                    //TitleName = entity.Title.TitleName,
+                    //TitleId = entity.TitleId,
                     CreatedUtc = entity.CreatedUtc
                 };
             }
@@ -104,8 +107,8 @@ namespace Services
                 entity.PromotionId = model.PromotionId;
                 entity.Wins = model.Wins;
                 entity.Losses = model.Losses;
-                entity.IsChampion = model.IsChampion;
-                entity.TitleId = model.TitleId;
+                //entity.IsChampion = model.IsChampion;
+                //entity.TitleId = model.TitleId;
 
                 return ctx.SaveChanges() == 1;
             }

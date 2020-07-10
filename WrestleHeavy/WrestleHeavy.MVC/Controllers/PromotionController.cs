@@ -66,7 +66,7 @@ namespace WrestleHeavy.MVC.Controllers
             var model = new PromotionEdit
             {
                 PromotionId = detail.PromotionId,
-                Name = detail.Name,
+                PromotionName = detail.PromotionName,
                 DateFounded = detail.DateFounded,
                 Website = detail.Website
             };
