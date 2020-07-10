@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using WrestleHeavy.Data;
 using WrestleHeavy.MVC.Models;
 
 namespace WrestleHeavy.MVC.Controllers
