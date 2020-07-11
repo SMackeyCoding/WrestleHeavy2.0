@@ -55,7 +55,7 @@
                 @Html.DisplayFor(modelItem => item.TitleName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsStarred)
+                @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.TitleId })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DateEstablished)
