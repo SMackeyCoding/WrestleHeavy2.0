@@ -34,5 +34,30 @@ namespace Data.Entities
                 }
             }
         }
+
+        public class WrestlerRepo
+        {
+            public IEnumerable<SelectListItem> GetWrestlers()
+            {
+                using (var ctx = new ApplicationDbContext())
+                {
+                    List<SelectListItem> wrestlers = ctx.Wrestlers.AsNoTracking()
+                        .OrderBy(n => n.RingName)
+                        .Select(n =>
+                        new SelectListItem
+                        {
+                            Value = n.WrestlerId.ToString(),
+                            Text = n.RingName
+                        }).ToList();
+                    var wrestlerTip = new SelectListItem()
+                    {
+                        Value = null,
+                        Text = "Select a Wrestler"
+                    };
+                    wrestlers.Insert(0, wrestlerTip);
+                    return new SelectList(wrestlers, "Value", "Text");
+                }
+            }
+        }
     }
 }

@@ -1,13 +1,13 @@
-﻿@model IEnumerable<Models.WrestlerCRUD.WrestlerListItem>
+﻿@model IEnumerable<Models.TitleCRUD.TitleListItem>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Wrestlers</h2>
+<h2>Titles</h2>
 
 <p>
-    @Html.ActionLink("Create New Wrestler", "Create")
+    @Html.ActionLink("Create New Title", "Create")
 </p>
 @if (TempData.ContainsKey("SaveResult"))
 {
@@ -22,25 +22,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.WrestlerId)
+            @Html.DisplayNameFor(model => model.TitleId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RingName)
+            @Html.DisplayNameFor(model => model.TitleName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.IsStarred)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Promotion)
+            @Html.DisplayNameFor(model => model.DateEstablished)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Wins)
+            @Html.DisplayNameFor(model => model.PromotionName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Losses)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WinLossRatio)
+            @Html.DisplayNameFor(model => model.WrestlerName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CreatedUtc)
@@ -52,33 +49,30 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.WrestlerId)
+                @Html.DisplayFor(modelItem => item.TitleId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RingName)
+                @Html.DisplayFor(modelItem => item.TitleName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.WrestlerId })
+                @Html.DisplayFor(modelItem => item.IsStarred)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateEstablished)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PromotionName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Wins)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Losses)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WinLossRatio)
+                @Html.DisplayFor(modelItem => item.WrestlerName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreatedUtc)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.WrestlerId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.WrestlerId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.WrestlerId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.TitleId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TitleId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TitleId  })
             </td>
         </tr>
     }
@@ -92,12 +86,12 @@
              .css({ "cursor": "pointer" })
              .click(function (e) {
                  var target = $(e.target);
-                 var wrestlerId = target.attr("data-id");
+                 var titleId = target.attr("data-id");
                  var starSet = target.hasClass("glyphicon-star");
 
                  $.ajax({
                      method: starSet ? "DELETE" : "PUT",
-                     url: "/api/wrestler/" + wrestlerId + "/star",
+                     url: "/api/title/" + titleId + "/star",
                      data: null
                  })
                  .done(function (r) {

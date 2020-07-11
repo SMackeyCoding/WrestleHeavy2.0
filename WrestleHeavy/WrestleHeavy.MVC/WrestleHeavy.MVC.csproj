@@ -183,6 +183,7 @@
     <Compile Include="Controllers\PromotionController.cs" />
     <Compile Include="Controllers\TitleController.cs" />
     <Compile Include="Controllers\WebAPI\PromotionController.cs" />
+    <Compile Include="Controllers\WebAPI\TitleController.cs" />
     <Compile Include="Controllers\WebAPI\WrestlerController.cs" />
     <Compile Include="Controllers\WrestlerController.cs" />
     <Compile Include="Global.asax.cs">
@@ -261,10 +262,14 @@
     <Content Include="Views\Wrestler\Details.cshtml" />
     <Content Include="Views\Wrestler\Edit.cshtml" />
     <Content Include="Views\Wrestler\Delete.cshtml" />
+    <Content Include="Views\Title\Index.cshtml" />
+    <Content Include="Views\Title\Create.cshtml" />
+    <Content Include="Views\Title\Details.cshtml" />
+    <Content Include="Views\Title\Edit.cshtml" />
+    <Content Include="Views\Title\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Title\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -47,6 +47,7 @@ namespace Services
                     {
                         TitleId = e.Id,
                         TitleName = e.TitleName,
+                        IsStarred = e.IsStarred,
                         DateEstablished = e.DateEstablished,
                         PromotionName = e.Promotion.PromotionName,
                         WrestlerName = e.Wrestler.RingName,
@@ -67,9 +68,10 @@ namespace Services
                 {
                     TitleId = entity.Id,
                     TitleName = entity.TitleName,
+                    IsStarred = entity.IsStarred,
                     DateEstablished = entity.DateEstablished,
-                    PromotionName = entity.Promotion.PromotionName,
-                    WrestlerName = entity.Wrestler.RingName,
+                    PromotionId = entity.PromotionId,
+                    WrestlerId = entity.WrestlerId,
                     CreatedUtc = entity.CreatedUtc
                 };
             }
@@ -85,6 +87,8 @@ namespace Services
 
                 entity.Id = model.TitleId;
                 entity.TitleName = model.TitleName;
+                entity.IsStarred = model.IsStarred;
+                entity.DateEstablished = model.DateEstablished;
                 entity.WrestlerId = model.WrestlerId;
 
                 return ctx.SaveChanges() == 1;
