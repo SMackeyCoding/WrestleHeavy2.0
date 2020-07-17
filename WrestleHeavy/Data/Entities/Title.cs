@@ -18,7 +18,7 @@ namespace Data.Entities
         [Required]
         public string TitleName { get; set; }
         [Required]
-        public DateTimeOffset DateEstablished { get; set; }
+        public DateTime DateEstablished { get; set; }
 
         [Required, ForeignKey("Promotion")]
         public int? PromotionId { get; set; }

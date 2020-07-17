@@ -22,14 +22,13 @@ namespace Data.Entities
         [Required]
         public Gender Gender { get; set; }
         [Required]
-        public DateTimeOffset DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         [Required]
         public Nationality Nationality { get; set; }
 
         [Required, ForeignKey("Promotion")]
-        public int? PromotionId { get; set; }
+        public int PromotionId { get; set; }
         public virtual Promotion Promotion { get; set; }
-        public IEnumerable<SelectListItem> Promotions { get; set; }
 
 
         [Required]
@@ -40,9 +39,10 @@ namespace Data.Entities
         public decimal WinLossRatio { get; set; }
         [Required]
         public bool IsChampion { get; set; }
-        //[ForeignKey("Title")]
-        //public int? TitleId { get; set; }
-        //public virtual Title Title { get; set; }
+        [ForeignKey("Title")]
+        public int? TitleId { get; set; }
+        public virtual Title Title { get; set; }
+        public ICollection<Title> Titles { get; set; }
 
         [DefaultValue(false)]
         public bool IsStarred { get; set; }
@@ -50,7 +50,7 @@ namespace Data.Entities
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
 
-        public List<Wrestler> Wrestlers { get; set; }
+        //public List<Wrestler> Wrestlers { get; set; }
         //public List<Promotion> Promotions { get; set; }
     }
 }

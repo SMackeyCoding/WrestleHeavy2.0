@@ -20,10 +20,10 @@ namespace Models.WrestlerCRUD
         public bool IsStarred { get; set; }
         public Gender Gender { get; set; }
         [Display(Name = "Date of Birth")]
-        public DateTimeOffset DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public Nationality Nationality { get; set; }
         [Display(Name = "Promotion")]
-        public int? PromotionId { get; set; }
+        public int PromotionId { get; set; }
         public IEnumerable<SelectListItem> Promotions { get; set; }
         public int Wins { get; set; }
         public int Losses { get; set; }

@@ -10,7 +10,6 @@ namespace Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "WrestleHeavy.Data.ApplicationDbContext";
         }
 
         protected override void Seed(WrestleHeavy.Data.ApplicationDbContext context)

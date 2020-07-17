@@ -18,7 +18,7 @@ namespace Models.TitleCRUD
 
         [Required]
         [Display(Name = "Date Established")]
-        public DateTimeOffset DateEstablished { get; set; }
+        public DateTime DateEstablished { get; set; }
 
         [Required]
         [Display(Name = "Promotion")]

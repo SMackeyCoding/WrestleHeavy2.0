@@ -22,7 +22,7 @@ namespace Models.TitleCRUD
         [Display(Name = "Favorite")]
         public bool IsStarred { get; set; }
         [Display(Name ="Date Established")]
-        public DateTimeOffset DateEstablished { get; set; }
+        public DateTime DateEstablished { get; set; }
 
         [Display(Name = "Promotion")]
         public string PromotionName { get; set; }
