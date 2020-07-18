@@ -93,9 +93,25 @@
     <Compile Include="Entities\Wrestler.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Entities\Promotion.cs" />
-    <Compile Include="Migrations\202007170105090_CascadeDelete1.cs" />
-    <Compile Include="Migrations\202007170105090_CascadeDelete1.Designer.cs">
-      <DependentUpon>202007170105090_CascadeDelete1.cs</DependentUpon>
+    <Compile Include="Migrations\202007181605317_InitialCreate.cs" />
+    <Compile Include="Migrations\202007181605317_InitialCreate.Designer.cs">
+      <DependentUpon>202007181605317_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007181615435_CascadeDelete1.cs" />
+    <Compile Include="Migrations\202007181615435_CascadeDelete1.Designer.cs">
+      <DependentUpon>202007181615435_CascadeDelete1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007181625163_CascadeDelete2.cs" />
+    <Compile Include="Migrations\202007181625163_CascadeDelete2.Designer.cs">
+      <DependentUpon>202007181625163_CascadeDelete2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007181628363_CascadeDelete3.cs" />
+    <Compile Include="Migrations\202007181628363_CascadeDelete3.Designer.cs">
+      <DependentUpon>202007181628363_CascadeDelete3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007181630507_CascadeDelete4.cs" />
+    <Compile Include="Migrations\202007181630507_CascadeDelete4.Designer.cs">
+      <DependentUpon>202007181630507_CascadeDelete4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,8 +121,20 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007170105090_CascadeDelete1.resx">
-      <DependentUpon>202007170105090_CascadeDelete1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007181605317_InitialCreate.resx">
+      <DependentUpon>202007181605317_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007181615435_CascadeDelete1.resx">
+      <DependentUpon>202007181615435_CascadeDelete1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007181625163_CascadeDelete2.resx">
+      <DependentUpon>202007181625163_CascadeDelete2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007181628363_CascadeDelete3.resx">
+      <DependentUpon>202007181628363_CascadeDelete3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007181630507_CascadeDelete4.resx">
+      <DependentUpon>202007181630507_CascadeDelete4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
