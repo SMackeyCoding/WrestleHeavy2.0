@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using static Data.Entities.Repos;
 
 namespace WrestleHeavy.MVC.Controllers
 {
@@ -26,7 +27,12 @@ namespace WrestleHeavy.MVC.Controllers
         //GET: Create
         public ActionResult Create()
         {
-            return View();
+            var model = new TitleCreate();
+            var promotionList = new PromotionRepo();
+            var wrestlerList = new WrestlerRepo();
+            model.Promotions = promotionList.GetPromotions();
+            model.Wrestlers = wrestlerList.GetWrestlers();
+            return View(model);
         }
 
         //POST: Create
@@ -34,8 +40,14 @@ namespace WrestleHeavy.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(TitleCreate model)
         {
-            if (!ModelState.IsValid) return View(model);
-
+            if (!ModelState.IsValid)
+            {
+                var promotionList = new PromotionRepo();
+                var wrestlerList = new WrestlerRepo();
+                model.Promotions = promotionList.GetPromotions();
+                model.Wrestlers = wrestlerList.GetWrestlers();
+                return View(model);
+            }
             var service = CreateTitleService();
 
             if (service.CreateTitle(model))
@@ -63,12 +75,18 @@ namespace WrestleHeavy.MVC.Controllers
         {
             var service = CreateTitleService();
             var detail = service.GetTitleById(id);
+
+            var wrestlerList = new WrestlerRepo();
             var model = new TitleEdit
             {
                 TitleId = detail.TitleId,
                 TitleName = detail.TitleName,
+                IsStarred = detail.IsStarred,
+                DateEstablished = detail.DateEstablished,
                 WrestlerId = detail.WrestlerId
             };
+            model.Wrestlers = wrestlerList.GetWrestlers();
+
             return View(model);
         }
 
@@ -77,7 +95,13 @@ namespace WrestleHeavy.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, TitleEdit model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                var wrestlerList = new WrestlerRepo();
+                model.Wrestlers = wrestlerList.GetWrestlers();
+
+                return View(model);
+            }
 
             if (model.TitleId != id)
             {

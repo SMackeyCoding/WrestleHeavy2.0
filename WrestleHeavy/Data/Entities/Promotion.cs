@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Data
 {
@@ -26,6 +28,6 @@ namespace Data
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
 
-        public List<Promotion> Promotions { get; set; }
+        public ICollection<Wrestler> Wrestlers { get; set; }
     }
 }

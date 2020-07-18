@@ -41,8 +41,20 @@ namespace WrestleHeavy.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Configurations.Add(new IdentityUserLoginConfiguration())
                                        .Add(new IdentityUserRoleConfiguration());
+
+            modelBuilder.Entity<Title>()
+                .HasOptional(j => j.Wrestler)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Wrestler>()
+                .HasRequired(j => j.Promotion)
+                .WithMany(w => w.Wrestlers)
+                .WillCascadeOnDelete(false);
+
         }
     }
 

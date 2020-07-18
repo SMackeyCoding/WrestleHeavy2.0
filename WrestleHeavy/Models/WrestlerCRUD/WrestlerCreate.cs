@@ -25,13 +25,13 @@ namespace Models.WrestlerCRUD
 
         [Required]
         [Display(Name = "Date of Birth")]
-        public DateTimeOffset DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         [Required]
         public Nationality Nationality { get; set; }
 
         [Display(Name = "Promotion")]
-        public int? PromotionId { get; set; }
+        public int PromotionId { get; set; }
         public IEnumerable<SelectListItem> Promotions { get; set; }
 
         [Required]

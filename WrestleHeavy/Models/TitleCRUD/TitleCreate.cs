@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Models.TitleCRUD
 {
@@ -17,14 +18,15 @@ namespace Models.TitleCRUD
 
         [Required]
         [Display(Name = "Date Established")]
-        public DateTimeOffset DateEstablished { get; set; }
+        public DateTime DateEstablished { get; set; }
 
         [Required]
+        [Display(Name = "Promotion")]
+        public int? PromotionId { get; set; }
+        public IEnumerable<SelectListItem> Promotions { get; set; }
+
         [Display(Name = "Current Champion")]
         public int? WrestlerId { get; set; }
-
-        [Required]
-        public int? PromotionId { get; set; }
-        
+        public IEnumerable<SelectListItem> Wrestlers { get; set; }
     }
 }
