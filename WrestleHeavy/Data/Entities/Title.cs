@@ -27,6 +27,7 @@ namespace Data.Entities
         [ForeignKey("Wrestler")]
         public int? WrestlerId { get; set; }
         public virtual Wrestler Wrestler { get; set; }
+        public ICollection<Wrestler> Wrestlers { get; set; }
 
         [DefaultValue(false)]
         public bool IsStarred { get; set; }
