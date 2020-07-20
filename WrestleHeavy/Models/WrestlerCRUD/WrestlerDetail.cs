@@ -28,15 +28,6 @@ namespace Models.WrestlerCRUD
         public int Wins { get; set; }
         public int Losses { get; set; }
 
-        [Display(Name = "Win/Loss Ratio")]
-        public decimal WinLossRatio { get; set; }
-
-        //[Display(Name = "Current Champion")]
-        //public bool IsChampion { get; set; }
-        //[Display(Name = "Title Held")]
-        //public string TitleName { get; set; }
-        //[Display(Name = "Title Held")]
-        //public int? TitleId { get; set; }
 
         [Display(Name = "Date Created")]
         public DateTimeOffset CreatedUtc { get; set; }

@@ -36,8 +36,6 @@ namespace Data.Entities
         [Required]
         public int Losses { get; set; }
         [Required]
-        public decimal WinLossRatio { get; set; }
-        [Required]
         public bool IsChampion { get; set; }
         [ForeignKey("Title")]
         public int? TitleId { get; set; }
@@ -49,8 +47,5 @@ namespace Data.Entities
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
-
-        //public List<Wrestler> Wrestlers { get; set; }
-        //public List<Promotion> Promotions { get; set; }
     }
 }

@@ -31,8 +31,6 @@ namespace Models.WrestlerCRUD
         public int Wins { get; set; }
         public int Losses { get; set; }
 
-        [Display(Name = "Win/Loss Ratio")]
-        public decimal WinLossRatio { get; set; }
 
         [Display(Name = "Date Created")]
         public DateTimeOffset CreatedUtc { get; set; }

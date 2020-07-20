@@ -39,11 +39,6 @@ namespace Models.WrestlerCRUD
 
         [Required]
         public int Losses { get; set; }
-
-        //[Required]
-        //[Display(Name = "Is this wrestler currently a champion?")]
-        //public bool IsChampion { get; set; }
-        //public int? TitleId { get; set; }
     }
 }
 
