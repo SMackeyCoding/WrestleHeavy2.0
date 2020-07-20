@@ -71,9 +71,6 @@ namespace WrestleHeavy.MVC.Controllers
         {
             var svc = CreateWrestlerService();
             var model = svc.GetWrestlerById(id);
-            int wins = model.Wins;
-            int losses = model.Losses;
-            model.WinLossRatio = wins / losses;
 
             return View(model);
         }
@@ -94,8 +91,6 @@ namespace WrestleHeavy.MVC.Controllers
                 PromotionId = detail.PromotionId,
                 Wins = detail.Wins,
                 Losses = detail.Losses,
-                //IsChampion = detail.IsChampion,
-                //TitleId = detail.TitleId
             };
             model.Promotions = promotionList.GetPromotions();
 

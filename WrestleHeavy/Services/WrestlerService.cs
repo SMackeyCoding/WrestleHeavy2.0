@@ -33,8 +33,6 @@ namespace Services
                 PromotionId = model.PromotionId,
                 Wins = model.Wins,
                 Losses = model.Losses,
-                //IsChampion = model.IsChampion,
-                //TitleId = model.TitleId,
                 CreatedUtc = DateTimeOffset.Now
             };
 
@@ -59,7 +57,6 @@ namespace Services
                         PromotionName = e.Promotion.PromotionName,
                         Wins = e.Wins,
                         Losses = e.Losses,
-                        WinLossRatio = e.Wins / e.Losses,
                         CreatedUtc = e.CreatedUtc
                     });
                 return query.ToArray();
@@ -84,10 +81,6 @@ namespace Services
                     PromotionId = entity.PromotionId,
                     Wins = entity.Wins,
                     Losses = entity.Losses,
-                    WinLossRatio = entity.Wins / entity.Losses,
-                    //IsChampion = entity.IsChampion,
-                    //TitleName = entity.Title.TitleName,
-                    //TitleId = entity.TitleId,
                     CreatedUtc = entity.CreatedUtc
                 };
             }
@@ -107,8 +100,6 @@ namespace Services
                 entity.PromotionId = model.PromotionId;
                 entity.Wins = model.Wins;
                 entity.Losses = model.Losses;
-                //entity.IsChampion = model.IsChampion;
-                //entity.TitleId = model.TitleId;
 
                 return ctx.SaveChanges() == 1;
             }
