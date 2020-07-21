@@ -5,11 +5,7 @@
         color:darkgoldenrod;
     }
 
-    #nav-color a {
-        color:darkgoldenrod;
-    }
-
-    #nav-color a:hover {
+    #nav-color:hover {
         color:gold;
     }
 </style>
@@ -21,7 +17,7 @@
     @Html.AntiForgeryToken()
 
     <ul class="nav navbar-nav navbar-right">
-        <li style="color:darkgoldenrod">
+        <li>
             @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", id = "nav-color"})
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()" id="nav-color">Log off</a></li>
@@ -31,7 +27,7 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "nav-color" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "nav-color" })</li>
     </ul>
 }

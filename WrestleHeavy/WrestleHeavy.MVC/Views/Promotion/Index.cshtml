@@ -4,9 +4,40 @@
     ViewBag.Title = "Index";
 }
 
+
+<style>
+    body {
+        background-color: darkgray;
+    }
+
+    .btn {
+        background-color: darkgoldenrod;
+        color: black;
+        border: solid 1px black;
+    }
+
+        .btn:hover {
+            background-color: black;
+            color: gold;
+        }
+
+    #linkColor a {
+        color: black;
+        background-color: darkgoldenrod;
+        border: solid 1px black;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+        #linkColor a:hover {
+            color: gold;
+            background-color: black;
+        }
+</style>
+
 <h2>Promotions</h2>
 
-<p>
+<p id="linkColor">
     @Html.ActionLink("Create New Promotion", "Create")
 </p>
 @if (TempData.ContainsKey("SaveResult"))
@@ -19,6 +50,7 @@
         @TempData["SaveResult"]
     </div>
 }
+
 <table class="table">
     <tr>
         <th>
@@ -44,30 +76,35 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PromotionId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PromotionName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.PromotionId })
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateFounded)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Website)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedUtc)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.PromotionId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.PromotionId })
-            </td>
-        </tr>
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#info">
+            @Html.DisplayFor(modelItem => item.PromotionName)
+        </button>
+        <div id="info" class="collapse">
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PromotionId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PromotionName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.PromotionId })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateFounded)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Website)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedUtc)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PromotionId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PromotionId })
+                </td>
+            </tr>
+        </div>
     }
 
 </table>

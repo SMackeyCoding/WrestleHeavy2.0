@@ -4,13 +4,43 @@
     ViewBag.Title = "Create";
 }
 
+<style>
+    body {
+        background-color: darkgray;
+    }
+
+    .btn {
+        background-color: darkgoldenrod;
+        color: black;
+        border: solid 1px black;
+    }
+
+        .btn:hover {
+            background-color: black;
+            color: gold;
+        }
+
+    #linkColor a{
+        color: black;
+        background-color: darkgoldenrod;
+        border: solid 1px black;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    #linkColor a:hover {
+        color: gold;
+        background-color: black;
+    }
+</style>
+
 <h2>Create a Promotion</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -46,7 +76,7 @@
     </div>
 }
 
-<div>
+<div id="linkColor">
     @Html.ActionLink("Back to List", "Index")
 </div>
 

@@ -39,6 +39,14 @@
                 font-size: 36px;
                 margin-left: 50px;
             }
+
+            #myNav {
+                color:darkgoldenrod;
+            }
+
+            #myNav:hover {
+                color:gold;
+            }
     </style>
     <title>@ViewBag.Title - WrestleHeavy</title>
     @Styles.Render("~/Content/css")
@@ -54,7 +62,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <span style="font-size: 30px; cursor:pointer; color: darkgoldenrod" onclick="openNav()">&#9776; Menu</span>
+                <span style="font-size: 30px; cursor:pointer;" id="myNav" onclick="openNav()">&#9776; Menu</span>
             </div>
             <div class="navbar-collapse collapse">
                 @Html.Partial("_LoginPartial")
