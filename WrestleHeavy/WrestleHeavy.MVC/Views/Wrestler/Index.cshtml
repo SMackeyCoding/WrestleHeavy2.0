@@ -4,9 +4,39 @@
     ViewBag.Title = "Index";
 }
 
+    <style>
+        body {
+            background-color: darkgray;
+        }
+
+        .btn {
+            background-color: darkgoldenrod;
+            color: black;
+            border: solid 1px black;
+        }
+
+            .btn:hover {
+                background-color: black;
+                color: gold;
+            }
+
+        #linkColor a {
+            color: black;
+            background-color: darkgoldenrod;
+            border: solid 1px black;
+            border-radius: 5px;
+            padding: 7px;
+        }
+
+            #linkColor a:hover {
+                color: gold;
+                background-color: black;
+            }
+    </style>
+
 <h2>Wrestlers</h2>
 
-<p>
+<p id="linkColor">
     @Html.ActionLink("Create New Wrestler", "Create")
 </p>
 @if (TempData.ContainsKey("SaveResult"))
@@ -69,9 +99,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CreatedUtc)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.WrestlerId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.WrestlerId }) |
+            <td id="linkColor">
+                @Html.ActionLink("Edit", "Edit", new { id = item.WrestlerId }) 
+                @Html.ActionLink("Details", "Details", new { id = item.WrestlerId }) 
                 @Html.ActionLink("Delete", "Delete", new { id = item.WrestlerId })
             </td>
         </tr>

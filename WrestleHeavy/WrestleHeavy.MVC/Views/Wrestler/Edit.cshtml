@@ -4,6 +4,36 @@
     ViewBag.Title = "Edit";
 }
 
+    <style>
+        body {
+            background-color: darkgray;
+        }
+
+        .btn {
+            background-color: darkgoldenrod;
+            color: black;
+            border: solid 1px black;
+        }
+
+            .btn:hover {
+                background-color: black;
+                color: gold;
+            }
+
+        #linkColor a {
+            color: black;
+            background-color: darkgoldenrod;
+            border: solid 1px black;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+            #linkColor a:hover {
+                color: gold;
+                background-color: black;
+            }
+    </style>
+
 <h2>Updating Wrestler</h2>
 
 @using (Html.BeginForm())
@@ -57,23 +87,7 @@
             </div>
         </div>
 
-        @*<div class="form-group">
-                @Html.LabelFor(model => model.IsChampion, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.IsChampion)
-                        @Html.ValidationMessageFor(model => model.IsChampion, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.TitleId, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.TitleId, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.TitleId, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
+        
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -83,7 +97,7 @@
     </div>
 }
 
-<div>
+<div id="linkColor">
     @Html.ActionLink("Back to List", "Index")
 </div>
 
