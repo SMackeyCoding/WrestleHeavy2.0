@@ -29,7 +29,7 @@
 
                 .sidenav a:hover {
                     color: gold;
-                    text-decoration:none
+                    text-decoration: none
                 }
 
             .sidenav closebtn {
@@ -40,12 +40,36 @@
                 margin-left: 50px;
             }
 
-            #myNav {
-                color:darkgoldenrod;
-            }
+        a:hover {
+            cursor: pointer;
+        }
+
+        .modal-header {
+            background-color: black;
+            color:darkgoldenrod;
+        }
+
+        .modal-footer {
+            background-color:black;
+            color:darkgoldenrod;
+        }
+
+        .modal-body {
+            background-color: darkgoldenrod;
+            color: black;
+        }
+
+        .modal-content {
+            border: solid 2px black;
+            border-radius: 10px;
+        }
+
+        #myNav {
+            color: darkgoldenrod;
+        }
 
             #myNav:hover {
-                color:gold;
+                color: gold;
             }
     </style>
     <title>@ViewBag.Title - WrestleHeavy</title>
@@ -79,22 +103,24 @@
             <a href="https://localhost:44348/Wrestler">Wrestlers</a>
             <a href="https://localhost:44348/Title">Titles</a>
         }
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#contactModal">Contact</button>
-        <div class="modal" id="contactModal" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Contact Information</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Email: s.mackey.coding@gmail.com</p>
-                        <p>LinkedIn: https://www.linkedin.com/in/stephen-mackey-46287a83/</p>
-                        <p>GitHub: https://github.com/SMackeyCoding</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+        <a data-toggle="modal" data-target="#contactModal">Contact</a>
+
+    </div>
+
+    <div class="modal" id="contactModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Contact Information</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Email: s.mackey.coding@gmail.com</p>
+                    <p>LinkedIn: https://www.linkedin.com/in/stephen-mackey-46287a83/</p>
+                    <p>GitHub: https://github.com/SMackeyCoding</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

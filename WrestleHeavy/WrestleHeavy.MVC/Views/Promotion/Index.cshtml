@@ -51,64 +51,57 @@
     </div>
 }
 
-@foreach (var item in Model)
-{
-    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#info">
-        @Html.DisplayFor(modelItem => item.PromotionName)
-    </button>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PromotionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PromotionName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsStarred)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateFounded)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Website)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </th>
+        <th></th>
+    </tr>
 
-    <div id="info" class="collapse">
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.PromotionId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PromotionName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.IsStarred)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DateFounded)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Website)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CreatedUtc)
-                </th>
-                <th></th>
-            </tr>
-
-
-            <tr id="info" class="collapse">
-                <td id="info">
-                    @Html.DisplayFor(modelItem => item.PromotionId)
-                </td>
-                <td id="info" class="collapse">
-                    @Html.DisplayFor(modelItem => item.PromotionName)
-                </td>
-                <td id="info" class="collapse">
-                    @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.PromotionId })
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateFounded)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Website)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedUtc)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.PromotionId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.PromotionId })
-                </td>
-            </tr>
-        </table>
-    </div>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PromotionId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PromotionName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.PromotionId })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateFounded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Website)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedUtc)
+            </td>
+            <td id="linkColor">
+                @Html.ActionLink("Edit", "Edit", new { id = item.PromotionId }) 
+                @Html.ActionLink("Details", "Details", new { id = item.PromotionId })
+            </td>
+        </tr>
+    }
+</table>
 
 @section scripts {
     <script language="javascript" type="text/javascript">
