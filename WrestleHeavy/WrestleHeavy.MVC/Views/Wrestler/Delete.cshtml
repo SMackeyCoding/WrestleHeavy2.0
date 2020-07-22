@@ -4,6 +4,36 @@
     ViewBag.Title = "Delete";
 }
 
+    <style>
+        body {
+            background-color: darkgray;
+        }
+
+        .btn {
+            background-color: darkgoldenrod;
+            color: black;
+            border: solid 1px black;
+        }
+
+            .btn:hover {
+                background-color: black;
+                color: gold;
+            }
+
+        #linkColor a {
+            color: black;
+            background-color: darkgoldenrod;
+            border: solid 1px black;
+            border-radius: 5px;
+            padding: 8px;
+        }
+
+            #linkColor a:hover {
+                color: gold;
+                background-color: black;
+            }
+    </style>
+
 <h2>Deleting a Wrestler</h2>
 
 <h3>Are you sure you want to delete this wrestler?</h3>
@@ -59,38 +89,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.WinLossRatio)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.WinLossRatio)
-        </dd>
-
-        @*<dt>
-            @Html.DisplayNameFor(model => model.IsChampion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsChampion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TitleName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TitleName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TitleId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TitleId)
-        </dd>*@
-
-        <dt>
             @Html.DisplayNameFor(model => model.CreatedUtc)
         </dt>
 
@@ -103,8 +101,8 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+        <div class="form-actions no-color" id="linkColor">
+            <input type="submit" value="Delete" class="btn btn-default" /> 
             @Html.ActionLink("Back to List", "Index")
         </div>
     }

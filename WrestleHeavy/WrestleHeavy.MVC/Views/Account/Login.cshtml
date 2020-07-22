@@ -4,7 +4,27 @@
     ViewBag.Title = "Log in";
 }
 
-<h2>@ViewBag.Title.</h2>
+<style>
+    body {
+        background-color: darkgray;
+        color: black;
+    }
+
+    .btn {
+        background-color: darkgoldenrod;
+        color: black;
+        border: solid 1px black;
+    }
+
+
+        .btn:hover {
+            background-color: black;
+            color: gold;
+            border: solid 1px black;
+        }
+</style>
+
+<h2>@ViewBag.Title</h2>
 <div class="row">
     <div class="col-md-8">
         <section id="loginForm">
@@ -41,21 +61,19 @@
                         <input type="submit" value="Log in" class="btn btn-default" />
                     </div>
                 </div>
-                <p>
-                    @Html.ActionLink("Register as a new user", "Register")
-                </p>
+                <p><a class="btn btn-default" href="https://localhost:44348/Account/Register">Register as a new user &raquo;</a></p>
                 @* Enable this once you have account confirmation enabled for password reset functionality
-                    <p>
-                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                    </p>*@
+            <p>
+                @Html.ActionLink("Forgot your password?", "ForgotPassword")
+            </p>*@
             }
         </section>
     </div>
-    <div class="col-md-4">
+    @*<div class="col-md-4">
         <section id="socialLoginForm">
             @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
         </section>
-    </div>
+    </div>*@
 </div>
 
 @section Scripts {

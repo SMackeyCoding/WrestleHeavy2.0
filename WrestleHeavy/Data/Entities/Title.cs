@@ -30,6 +30,7 @@ namespace Data.Entities
         public ICollection<Wrestler> Wrestlers { get; set; }
 
         [DefaultValue(false)]
+        [Display (Name = "Favorite")]
         public bool IsStarred { get; set; }
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }

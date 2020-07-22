@@ -3,7 +3,25 @@
     ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title.</h2>
+<style>
+    body {
+        background-color: darkgrey;
+        color: black;
+    }
+
+    .btn {
+        background-color: darkgoldenrod;
+        color: black; 
+        border: solid 1px black;
+    }
+
+    .btn:hover {
+        background-color: black;
+        color: gold;
+    }
+</style>
+
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {

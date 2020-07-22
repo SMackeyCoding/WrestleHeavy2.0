@@ -12,6 +12,7 @@ namespace Models.TitleCRUD
     {
         public int TitleId { get; set; }
         public string TitleName { get; set; }
+        [Display (Name = "Favorite")]
         public bool IsStarred { get; set; }
 
         [Display(Name ="Date Established")]

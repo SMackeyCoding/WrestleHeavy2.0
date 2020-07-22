@@ -4,6 +4,36 @@
     ViewBag.Title = "Details";
 }
 
+    <style>
+        body {
+            background-color: darkgray;
+        }
+
+        .btn {
+            background-color: darkgoldenrod;
+            color: black;
+            border: solid 1px black;
+        }
+
+            .btn:hover {
+                background-color: black;
+                color: gold;
+            }
+
+        #linkColor a {
+            color: black;
+            background-color: darkgoldenrod;
+            border: solid 1px black;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+            #linkColor a:hover {
+                color: gold;
+                background-color: black;
+            }
+    </style>
+
 <h2>Title Details</h2>
 
 <div>
@@ -67,7 +97,7 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.WrestlerId }) |
+<p id="linkColor">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WrestlerId }) 
     @Html.ActionLink("Back to List", "Index")
 </p>
