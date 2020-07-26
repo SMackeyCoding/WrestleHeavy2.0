@@ -70,8 +70,8 @@ namespace Services
                     TitleName = entity.TitleName,
                     IsStarred = entity.IsStarred,
                     DateEstablished = entity.DateEstablished,
-                    PromotionId = entity.PromotionId,
-                    WrestlerId = entity.WrestlerId,
+                    PromotionName = entity.Promotion.PromotionName,
+                    WrestlerName = entity.Wrestler.RingName,
                     CreatedUtc = entity.CreatedUtc
                 };
             }

@@ -23,7 +23,9 @@ namespace Models.WrestlerCRUD
         public DateTime DateOfBirth { get; set; }
         public Nationality Nationality { get; set; }
         [Display(Name = "Promotion")]
+        public string PromotionName { get; set; }
         public int PromotionId { get; set; }
+        public virtual Promotion Promotion { get; set; }
         public IEnumerable<SelectListItem> Promotions { get; set; }
         public int Wins { get; set; }
         public int Losses { get; set; }

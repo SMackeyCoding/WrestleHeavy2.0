@@ -23,10 +23,12 @@ namespace Models.TitleCRUD
 
         [Display(Name ="Promotion")]
         public int? PromotionId { get; set; }
+        public string PromotionName { get; set; }
         public IEnumerable<SelectListItem> Promotions { get; set; }
         
         [Display(Name = "Current Champion")]
         public int? WrestlerId { get; set; }
+        public string WrestlerName { get; set; }
         public IEnumerable<SelectListItem> Wrestlers { get; set; }
 
         [Display(Name = "Date Created")]

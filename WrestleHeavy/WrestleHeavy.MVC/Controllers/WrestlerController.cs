@@ -88,7 +88,7 @@ namespace WrestleHeavy.MVC.Controllers
                 WrestlerId = detail.WrestlerId,
                 RingName = detail.RingName,
                 Gender = detail.Gender,
-                PromotionId = detail.PromotionId,
+                PromotionName = detail.PromotionName,
                 Wins = detail.Wins,
                 Losses = detail.Losses,
             };

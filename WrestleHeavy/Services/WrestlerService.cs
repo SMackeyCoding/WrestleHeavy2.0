@@ -78,7 +78,7 @@ namespace Services
                     Gender = entity.Gender,
                     DateOfBirth = entity.DateOfBirth,
                     Nationality = entity.Nationality,
-                    PromotionId = entity.PromotionId,
+                    PromotionName = entity.Promotion.PromotionName,
                     Wins = entity.Wins,
                     Losses = entity.Losses,
                     CreatedUtc = entity.CreatedUtc
