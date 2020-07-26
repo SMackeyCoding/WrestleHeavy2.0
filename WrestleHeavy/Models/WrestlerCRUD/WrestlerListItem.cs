@@ -23,6 +23,7 @@ namespace Models.WrestlerCRUD
 
         [Display(Name = "Promotion")]
         public string PromotionName { get; set; }
+        public int PromotionId { get; set; }
         public virtual Promotion Promotion { get; set; }
         public IEnumerable<SelectListItem> Promotions { get; set; }
 

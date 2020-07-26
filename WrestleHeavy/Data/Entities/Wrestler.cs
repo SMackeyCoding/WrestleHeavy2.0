@@ -28,6 +28,7 @@ namespace Data.Entities
 
         [Required, ForeignKey("Promotion")]
         public int PromotionId { get; set; }
+        public string PromotionName { get; set; }
         public virtual Promotion Promotion { get; set; }
 
 

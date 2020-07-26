@@ -30,7 +30,7 @@ namespace WrestleHeavy.MVC.Controllers.WebAPI
                 RingName = detail.RingName,
                 IsStarred = newState,
                 Gender = detail.Gender,
-                PromotionId = detail.PromotionId,
+                PromotionName = detail.PromotionName,
                 Wins = detail.Wins,
                 Losses = detail.Losses
             };
