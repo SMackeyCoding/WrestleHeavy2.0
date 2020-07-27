@@ -20,6 +20,7 @@ namespace Models.TitleCRUD
 
         [Display(Name = "Current Champion")]
         public int? WrestlerId { get; set; }
+        public string WrestlerName { get; set; }
         public IEnumerable<SelectListItem> Wrestlers { get; set; }
     }
 }

@@ -117,7 +117,7 @@ namespace WrestleHeavy.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "The promotion could not be updated.");
+            ModelState.AddModelError("", "The title could not be updated.");
             return View(model);
         }
 

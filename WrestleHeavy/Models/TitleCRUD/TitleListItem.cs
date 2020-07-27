@@ -34,6 +34,7 @@ namespace Models.TitleCRUD
         public virtual Wrestler Wrestler { get; set; }
         public IEnumerable<SelectListItem> Wrestlers { get; set; }
 
+        [Display(Name = "Date Created")]
         public DateTimeOffset CreatedUtc { get; set; }
     }
 }
