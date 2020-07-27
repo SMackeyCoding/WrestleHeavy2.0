@@ -25,7 +25,5 @@ namespace Models.WrestlerCRUD
         public IEnumerable<SelectListItem> Promotions { get; set; }
         public int Wins { get; set; }
         public int Losses { get; set; }
-        public bool IsChampion { get; set; }
-        public int? TitleId { get; set; }
     }
 }
