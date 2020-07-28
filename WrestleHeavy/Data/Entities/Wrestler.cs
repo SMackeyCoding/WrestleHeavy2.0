@@ -43,8 +43,8 @@ namespace Data.Entities
         public virtual Title Title { get; set; }
         public ICollection<Title> Titles { get; set; }
 
-        [DefaultValue(false)]
-        public bool IsStarred { get; set; }
+        //[DefaultValue(false)]
+        //public bool IsStarred { get; set; }
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }

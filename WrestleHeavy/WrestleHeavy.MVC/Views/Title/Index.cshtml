@@ -57,14 +57,14 @@
         <th>
             @Html.DisplayNameFor(model => model.TitleName)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.IsStarred)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.DateEstablished)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PromotionName)
+            @Html.DisplayNameFor(model => model.Promotion)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.WrestlerName)
@@ -84,9 +84,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.TitleName)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.TitleId })
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.DateEstablished)
             </td>

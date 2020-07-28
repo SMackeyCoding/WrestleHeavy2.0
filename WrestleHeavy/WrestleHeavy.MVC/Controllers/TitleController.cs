@@ -81,7 +81,7 @@ namespace WrestleHeavy.MVC.Controllers
             {
                 TitleId = detail.TitleId,
                 TitleName = detail.TitleName,
-                IsStarred = detail.IsStarred,
+                //IsStarred = detail.IsStarred,
                 DateEstablished = detail.DateEstablished,
                 WrestlerId = detail.WrestlerId
             };

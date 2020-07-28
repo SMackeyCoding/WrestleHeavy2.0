@@ -47,7 +47,7 @@ namespace Services
                     {
                         TitleId = e.Id,
                         TitleName = e.TitleName,
-                        IsStarred = e.IsStarred,
+                        //IsStarred = e.IsStarred,
                         DateEstablished = e.DateEstablished,
                         PromotionName = e.Promotion.PromotionName,
                         WrestlerName = e.Wrestler.RingName,
@@ -64,16 +64,23 @@ namespace Services
                 var entity = ctx.Titles
                     .Single(e => e.Id == id
                     && e.OwnerId == _userId);
-                return new TitleDetail
+                var newTitle = new TitleDetail
                 {
                     TitleId = entity.Id,
                     TitleName = entity.TitleName,
-                    IsStarred = entity.IsStarred,
+                    //IsStarred = entity.IsStarred,
                     DateEstablished = entity.DateEstablished,
                     PromotionName = entity.Promotion.PromotionName,
-                    WrestlerName = entity.Wrestler.RingName,
+                    WrestlerName = "Vacant",
                     CreatedUtc = entity.CreatedUtc
                 };
+
+                if (entity.Wrestler != null)
+                {
+                    newTitle.WrestlerName = entity.Wrestler.RingName;
+                }
+
+                return (newTitle);
             }
         }
 
@@ -87,7 +94,7 @@ namespace Services
 
                 entity.Id = model.TitleId;
                 entity.TitleName = model.TitleName;
-                entity.IsStarred = model.IsStarred;
+                //entity.IsStarred = model.IsStarred;
                 entity.DateEstablished = model.DateEstablished;
                 entity.WrestlerId = model.WrestlerId;
 

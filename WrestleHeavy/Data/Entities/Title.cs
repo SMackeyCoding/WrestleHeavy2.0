@@ -29,9 +29,9 @@ namespace Data.Entities
         public virtual Wrestler Wrestler { get; set; }
         public ICollection<Wrestler> Wrestlers { get; set; }
 
-        [DefaultValue(false)]
-        [Display (Name = "Favorite")]
-        public bool IsStarred { get; set; }
+        //[DefaultValue(false)]
+        //[Display (Name = "Favorite")]
+        //public bool IsStarred { get; set; }
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
 

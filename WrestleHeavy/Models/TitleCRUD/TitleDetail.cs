@@ -15,8 +15,8 @@ namespace Models.TitleCRUD
 
         [Display(Name = "Title Name")]
         public string TitleName { get; set; }
-        [Display(Name = "Favorite")]
-        public bool IsStarred { get; set; }
+        //[Display(Name = "Favorite")]
+        //public bool IsStarred { get; set; }
 
         [Display(Name = "Date Established")]
         public DateTime DateEstablished { get; set; }

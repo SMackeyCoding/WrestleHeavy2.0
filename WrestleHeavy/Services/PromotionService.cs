@@ -46,7 +46,7 @@ namespace Services
                 {
                     PromotionId = e.PromotionId,
                     PromotionName = e.PromotionName,
-                    IsStarred = e.IsStarred,
+                    //IsStarred = e.IsStarred,
                     DateFounded = e.DateFounded,
                     Website = e.Website,
                     CreatedUtc = e.CreatedUtc
@@ -85,7 +85,7 @@ namespace Services
                 && e.OwnerId == _userId);
 
                 entity.PromotionName = model.PromotionName;
-                entity.IsStarred = model.IsStarred;
+                //entity.IsStarred = model.IsStarred;
                 entity.DateFounded = model.DateFounded.Date;
                 entity.Website = model.Website;
 
