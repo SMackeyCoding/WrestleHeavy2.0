@@ -58,9 +58,9 @@
         <th>
             @Html.DisplayNameFor(model => model.RingName)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.IsStarred)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Promotion)
         </th>
@@ -85,9 +85,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.RingName)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.WrestlerId })
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.PromotionName)
             </td>

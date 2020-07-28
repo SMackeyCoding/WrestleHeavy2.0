@@ -53,7 +53,7 @@ namespace Services
                     {
                         WrestlerId = e.WrestlerId,
                         RingName = e.RingName,
-                        IsStarred = e.IsStarred,
+                        //IsStarred = e.IsStarred,
                         PromotionName = e.Promotion.PromotionName,
                         Wins = e.Wins,
                         Losses = e.Losses,
@@ -74,7 +74,7 @@ namespace Services
                 {
                     WrestlerId = entity.WrestlerId,
                     RingName = entity.RingName,
-                    IsStarred = entity.IsStarred,
+                    //IsStarred = entity.IsStarred,
                     Gender = entity.Gender,
                     DateOfBirth = entity.DateOfBirth,
                     Nationality = entity.Nationality,
@@ -95,7 +95,7 @@ namespace Services
                 && e.OwnerId == _userId);
 
                 entity.RingName = model.RingName;
-                entity.IsStarred = model.IsStarred;
+                //entity.IsStarred = model.IsStarred;
                 entity.Gender = model.Gender;
                 entity.PromotionId = model.PromotionId;
                 entity.Wins = model.Wins;

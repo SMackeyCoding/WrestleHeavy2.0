@@ -28,7 +28,7 @@ namespace WrestleHeavy.MVC.Controllers.WebAPI
             {
                 TitleId = detail.TitleId,
                 TitleName = detail.TitleName,
-                IsStarred = newState,
+                //IsStarred = newState,
                 DateEstablished = detail.DateEstablished,
                 WrestlerId = detail.WrestlerId
             };

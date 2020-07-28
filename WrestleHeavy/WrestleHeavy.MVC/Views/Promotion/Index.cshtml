@@ -59,9 +59,9 @@
         <th>
             @Html.DisplayNameFor(model => model.PromotionName)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.IsStarred)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.DateFounded)
         </th>
@@ -83,9 +83,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.PromotionName)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.PromotionId })
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.DateFounded)
             </td>

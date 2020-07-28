@@ -22,8 +22,8 @@ namespace Data
         public DateTime DateFounded { get; set; }
         [Required]
         public string Website { get; set; }
-        [DefaultValue(false)]
-        public bool IsStarred { get; set; }
+        //[DefaultValue(false)]
+        //public bool IsStarred { get; set; }
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
