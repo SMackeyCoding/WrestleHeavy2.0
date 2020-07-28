@@ -96,12 +96,12 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="https://localhost:44348/">Home</a>
+        @Html.ActionLink("Home", "Index", "Home")
         @if (User.Identity.IsAuthenticated)
         {
-            <a href="https://localhost:44348/Promotion">Promotions</a>
-            <a href="https://localhost:44348/Wrestler">Wrestlers</a>
-            <a href="https://localhost:44348/Title">Titles</a>
+            @Html.ActionLink("Promotions", "Index", "Promotion")
+            @Html.ActionLink("Wrestlers", "Index", "Wrestler")
+            @Html.ActionLink("Titles", "Index", "Title")
         }
         <a data-toggle="modal" data-target="#aboutModal">About</a>
         <a data-toggle="modal" data-target="#contactModal">Contact</a>
